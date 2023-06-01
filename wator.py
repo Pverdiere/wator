@@ -34,7 +34,10 @@ while True:
     for poisson in listPoisson:
         positions = poisson.move(grid)
         poisson.setPosition(positions[1])
-        grid[positions[0][0]][positions[0][1]] = " "
+        if poisson.gestation:
+            poisson.setGestation(False)
+        else:
+            grid[positions[0][0]][positions[0][1]] = " "
         grid[positions[1][0]][positions[1][1]] = "§"
 
     print("_" * (len(grid[0]) + 2))
@@ -43,5 +46,4 @@ while True:
         for col in ligne:
             textLigne += col if type(col) == str else col.symbol
         print(f"|{textLigne}|")
-    print("_" * (len(grid[0]) + 2))
     time.sleep(1)
