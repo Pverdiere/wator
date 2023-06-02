@@ -39,9 +39,6 @@ class Fish:
         if case_a_regarder["gauche"] == ' ':
             case_disponible.append([self.position[0],(self.position[1] - 1) % len(grid[0])])
         return case_disponible
-    
-    def reproduction():
-        pass
         
     def setPosition(self,newPosition):
         self.position = newPosition
