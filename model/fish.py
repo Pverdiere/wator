@@ -16,9 +16,10 @@ class Fish:
     def move(self,grid) -> list:
         case_disponible = self.verifMovePossible(grid)
         nextPosition = self.position if case_disponible == [] else case_disponible[random.randrange(len(case_disponible))]
-        if self.nextReproduction == 0:
-            self.gestation = True
-        self.nextReproduction = Fish.timeReproduction if self.nextReproduction == 0 else self.nextReproduction -1
+        if case_disponible != []:
+            if self.nextReproduction == 0:
+                self.gestation = True
+            self.nextReproduction = Fish.timeReproduction if self.nextReproduction == 0 else self.nextReproduction -1
         return [self.position,nextPosition]
 
     def verifMovePossible(self,grid) -> list:
