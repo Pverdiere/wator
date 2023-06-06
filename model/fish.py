@@ -3,8 +3,8 @@ import random
 class Fish:
 
     nextId = 0
-    symbol = "§"
-    timeReproduction = 5
+    symbol = "\033[92m§\033[0m"
+    timeReproduction = 2
 
     def __init__(self,position) -> None:
         Fish.nextId += 1

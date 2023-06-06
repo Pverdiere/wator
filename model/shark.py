@@ -4,8 +4,9 @@ import random
 class Shark(Fish):
 
     maxEnergy = 10
-    symbol = "!"
+    symbol = "\033[91m§\033[0m"
     listShark = []
+    timeReproduction = 5
 
     def __init__(self, position) -> None:
         super().__init__(position)
